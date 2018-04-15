@@ -214,6 +214,44 @@ ggplot(data = sa_time, aes(y = now_now, x = just_now)) +
 
 # End of Day 2 ------------------------------------------------------------
 
+# Bonus Exercise  -----------------------------------------------------------
 
+# Running the correlation test betwwwn now now and just now--------------------------------------------------------
+
+cor.test(sa_time$now_now, sa_time$just_now, method = "pearson",
+         conf.level = 0.95)
+
+# Pearson's product-moment correlation
+
+# data:  sa_time$now_now and sa_time$just_now
+# t = -0.046516, df = 18, p-value = 0.9634
+# alternative hypothesis: true correlation is not equal to 0
+# 95 percent confidence interval:
+# -0.4512947  0.4336614
+# sample estimates:
+# cor 
+# -0.01096334 
+
+# The p value indicates that there is no significant correlation 
+# between now now and just now as it is less than 0.05
+
+# Looking at the relationship between the geographic location and now now -------------------------------------------------------------
+
+# Summarise the data to get the 2 needed columns  
+
+stat_data <- sa_time %>%
+  group_by(now_now, geo) %>%
+  summarise()
+
+# Creating the graph 
+
+ggplot(stat_data, aes(x = geo, y = now_now, fill = geo)) +
+  geom_col(aes(fill = geo), position = "dodge",width = 0.5) +
+  labs(x = "Location",y = "Now now",title = "Relationship between location and now now")
+
+# Results : It can be seen that people in Cape Town take the most time 
+# in terms of when they say now now as opposed to people in different regions.
+
+# End of bonus exercise  --------------------------------------------------
 
 
