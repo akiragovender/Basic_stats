@@ -203,8 +203,9 @@ compare_means(value ~ site, data = ecklonia_sub, method = "t.test",
 
 # Results 
 
-# The stipe mass of Ecklonia maxima was found to be significantly greater at 
-# Batsata Rock than at Boulders Beach (p = 0.03, t = 1.87, df = 24) 
+# The stipe mass of Ecklonia maxima was found to be 
+# significantly greater at Batsata Rock than at Boulders Beach 
+# (p = 0.03, t = 1.87, df = 24) 
 
 # Analysing another variable of the data ----------------------------------
 
@@ -284,7 +285,8 @@ compare_means(value ~ site, data = ecklonia_diam, method = "t.test",
 
 exercise <- data.frame(weight = c(rnorm(n = 15, mean = 22, sd = 1),
                             rnorm(n = 15, mean = 23, sd = 1)),
-                    location = c(rep("Durban", 15), rep("Cape Town", 15)))
+                    location = c(rep("Durban", 15), 
+                                 rep("Cape Town", 15)))
 
 # Visualising the data using a graph 
 
@@ -371,6 +373,5 @@ ggplot(data = filter(r_one),
   theme(plot.title = element_text(hjust = 0.5))
 
 # End of bonus exercise  -------------------------------------------------
-
 
 
