@@ -370,7 +370,7 @@ ggplot(data = filter(r_one),
        title = "Density plot representing the data") +
   theme(plot.title = element_text(hjust = 0.5))
 
-# End of bonus exercise  --------------------------------------------------
+# End of bonus exercise  -------------------------------------------------
 
 
 
