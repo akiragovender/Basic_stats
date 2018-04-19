@@ -258,18 +258,20 @@ ecklonia_diam %>%
   group_by(site) %>% 
   summarise(stipe_diam_var = two_assum(value)[1],
             stipe_diam_norm = two_assum(value)[2])
+# RWS: Note here that the variances are not equivalent
 
 # Running an analysis
 
 # Traditional output
 
-t.test(value ~ site, data = ecklonia_diam, var.equal = TRUE, 
+t.test(value ~ site, data = ecklonia_diam, var.equal = FALSE, 
        alternative = "greater")
+# RWS: Because the data are not homoscedastic we set var.equal = FALSE
 
 # Dataframe output
 
 compare_means(value ~ site, data = ecklonia_diam, method = "t.test", 
-              var.equal = TRUE, alternative = "greater")
+              var.equal = FALSE, alternative = "greater")
 
 # Results 
 
@@ -333,11 +335,14 @@ exercise %>%
 
 # Running the analysis (Traditional and dataframe respectively)
 
+# RWS: You've compared the groups the wrong way around
+# Should have used "less" not "greater"
+
 t.test(weight ~ location, data = exercise, 
-       var.equal = TRUE, alternative = "greater")
+       var.equal = TRUE, alternative = "less")
 
 compare_means(weight ~ location, data = exercise, method = "t.test", 
-              var.equal = TRUE, alternative = "greater")
+              var.equal = TRUE, alternative = "less")
 
 # Results 
 
