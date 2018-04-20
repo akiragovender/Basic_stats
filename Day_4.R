@@ -174,7 +174,7 @@ summary(Bacon_2)
 ggplot(data = Bacon_2, aes(x = feed, y = mass)) +
   geom_boxplot(aes(fill = feed), notch = TRUE)
 
-# There is a significant difference hence feed type has an effect on pig mass
+# There is a significant difference hence feed type has an effect on pig mass.
 
 # Extra analysis 
 
