@@ -29,7 +29,7 @@ snakes_summary <- snakes %>%
 
 #  Calculate SE & CI ------------------------------------------------------
 
-snakes_summary_2 <- summarySE(data = snakes,
+snakes_summary_2 <- Rmisc::summarySE(data = snakes,
                               measurevar = "openings",
                               groupvars = c("day"))
 
@@ -106,11 +106,11 @@ moth_trap_summary <- moths %>%
 
 #  Calculate SE & CI ------------------------------------------------------
 
-moth_loc_summary_2 <- summarySE(data = moths,
+moth_loc_summary_2 <- Rmisc::summarySE(data = moths,
                               measurevar = "count",
                               groupvars = c("Location"))
 
-moth_trap_summary_2 <- summarySE(data = moths,
+moth_trap_summary_2 <- Rmisc::summarySE(data = moths,
                                 measurevar = "count",
                                 groupvars = c("trap"))
 
@@ -132,6 +132,7 @@ Final <- ggarrange(Location, Trap,
                       ncol = 2, nrow = 1,
                       labels = ("AUTO"),
                       common.legend = TRUE)
+Final
 
 # Test the hypothesis -----------------------------------------------------
 
