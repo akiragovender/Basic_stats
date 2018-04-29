@@ -13,7 +13,7 @@
 
 library(tidyverse)
 library(ggpubr)
-library(rcompanion) # (Not loading on R version 3.5.0)
+library(rcompanion)
 
 # Load data 
 
